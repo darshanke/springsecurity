@@ -1,9 +1,7 @@
 package com.darshan.spring_security.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,7 +15,8 @@ public class User {
 
 
     @Id
-    private int userId;
+    @GeneratedValue (strategy = GenerationType.UUID)
+    private String userId;
     private String userName;
     private String userPassword;
 
